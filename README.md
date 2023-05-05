@@ -5,6 +5,55 @@ Airflow basic and general functionalities to get started on airflow
 
 [https://airflow.apache.org/docs/](https://airflow.apache.org/docs/)
 
+## Instalation
+
+### Cloning this repo
+
+You can use this repo to build you own airflow application just follow the next steps:
+
+```
+git clone git@github.com:DLesmes/airflow_sandbox_template.git
+```
+```
+cd airflow_sandbox_template
+```
+```
+curl -LfO 'https://airflow.apache.org/docs/apache-airflow/2.5.3/docker-compose.yaml'
+```
+There is a more recent [version 2.6.0](https://airflow.apache.org/docs/apache-airflow/stable/howto/docker-compose/index.html#fetching-docker-compose-yaml)
+
+* If you do not want to see the example DAG's, you can set this tag as false, it is on line 65 of the docker-compose.yaml file
+
+      AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
+
+Start Docker, you must to have it installed previously
+```
+docker compose up
+```
+### From scratch
+
+Just follow the next steps on your local console:
+
+```
+mkdir my_airflow_project
+cd my_airflow_project
+mkdir -p ./dags ./logs ./plugins ./scripts
+echo -e "AIRFLOW_UID=$(id -u)" > .env
+```
+```
+curl -LfO 'https://airflow.apache.org/docs/apache-airflow/2.5.3/docker-compose.yaml'
+```
+There is a more recent [version 2.6.0](https://airflow.apache.org/docs/apache-airflow/stable/howto/docker-compose/index.html#fetching-docker-compose-yaml)
+
+* If you do not want to see the example DAG's, you can set this tag as false, it is on line 65 of the docker-compose.yaml file
+
+      AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
+
+Start Docker, you must to have it instaled previously
+```
+docker compose up
+```
+
 ## General Folder Distribution / Three
 
 ```
